@@ -68,8 +68,7 @@
                     </li>
 
                     <li><a class="nav-link scrollto" href="#contact">Contact us</a></li>
-                    <li><a class="nav-link scrollto" href="login.php">Login</a></li>
-                    <li><a class="nav-link scrollto" href="signup.php">Sign up</a></li>
+
                     <li> <a class="nav-link scrollto text-info" href="#">User <i
                                 class="fa fa-user fa-2x text-warning"></i></a></li>
                 </ul>

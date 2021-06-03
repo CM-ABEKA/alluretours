@@ -73,6 +73,10 @@ if (isset($_POST['login'])){
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
                     <li>
 
+                        <a class="nav-link scrollto" href="#cta">Trip planner</a>
+                    </li>
+                    <li>
+
                         <a class="nav-link scrollto" href="#portfolio"> Gallery</a>
                     </li>
 
