@@ -710,17 +710,8 @@ if (isset($_POST['login'])){
 
         <?php
 }else{
-
-?>
-        <div class="card mt-3 bg-warning p-2 border-5">
-            <span><i class="fa fa-user-slash fa-6x"></i></span>
-            <div class="">Invalid User name or Password</div>
-            <div>
-                <p><a href="login.php">Try Again?</a></p>
-            </div>
-
-        </div>
-        <?php }}?>
+header('location:login.php')
+}}?>
 
 </body>
 
