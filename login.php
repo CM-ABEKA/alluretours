@@ -22,7 +22,7 @@
                     <i class="fa fa-user-circle fa-6x"></i>
                 </div>
                 <div class="card-body">
-                    <form action="index.php" method="post">
+                    <form action="user.php" method="post">
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
