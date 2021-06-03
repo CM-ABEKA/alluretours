@@ -331,10 +331,10 @@
                                 <strong>Email:</strong> alluretourstravels@gmail.com<br />
                             </p>
                             <div class="social-links mt-3">
-                                <a href="https://web.facebook.com/groups/157013252692254/" class="facebook"><i
-                                        class="fab fa-facebook fa-2x me-4"></i></a>
-                                <a href="https://www.instagram.com/alluretoursandtravels/" class="instagram"><i
-                                        class="fab fa-instagram fa-2x"></i></a>
+                                <a target="_blank" href="https://web.facebook.com/groups/157013252692254/"
+                                    class="facebook"><i class="fab fa-facebook fa-2x me-4"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/alluretoursandtravels/"
+                                    class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
