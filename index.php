@@ -25,6 +25,10 @@ if (isset($_POST['login'])){
         rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Fredoka+One&display=swap"
+        rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet" />
@@ -56,7 +60,7 @@ if (isset($_POST['login'])){
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-lg-between">
-            <h1 class="logo me-auto me-lg-0">
+            <h1 class="logo me-auto me-lg-0" style="font-family: 'Alegreya SC', serif;">
                 <a href="index.html">ALLURE</a>
             </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
@@ -87,8 +91,8 @@ if (isset($_POST['login'])){
         <div class="container" data-aos="fade-up">
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-xl-6 col-lg-8">
-                    <h1>ALLURE TOURS & TRAVEL</h1>
-                    <h2>Your adventure partner</h2>
+                    <h1 style="font-family: 'Alegreya SC', serif;">ALLURE TOURS & TRAVEL</h1>
+                    <h2 style="font-family: 'Fredoka One', cursive;">Your adventure partner</h2>
                 </div>
             </div>
 
@@ -96,33 +100,16 @@ if (isset($_POST['login'])){
                 <div class="col-xl-2 col-md-4">
                     <div class="icon-box">
                         <i class="fas fa-bus-alt"></i>
-                        <h3><a href="">Bus Trips</a></h3>
+                        <h3><a href="">Special Deals</a></h3>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
                     <div class="icon-box">
                         <i class="fas fa-route"></i>
-                        <h3><a href="">Park Visits</a></h3>
+                        <h3><a href="">Upcoming Events</a></h3>
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-fire"></i>
-                        <h3><a href="">Weekend Out</a></h3>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-campground"></i>
-                        <h3><a href="">Camping</a></h3>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-mountain"></i>
-                        <h3><a href="">Mountain Hikes</a></h3>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -139,7 +126,7 @@ if (isset($_POST['login'])){
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right"
                         data-aos-delay="100">
-                        <h3>Allure Tours & Travel</h3>
+                        <h3 style="font-family: 'Fredoka One', cursive;">Allure Tours & Travel</h3>
                         <p class="fst-italic">
                             We are a tours and travel agency situated in Gilgil Kenya
                             specialised in a vast range of outdoor experiences.
@@ -306,14 +293,15 @@ if (isset($_POST['login'])){
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
                 <div class="text-center">
-                    <h3>Join Allure Tours & Travel Today</h3>
+                    <h3>Schedule a tour with us today</h3>
                     <p>
                         Duis aute irure dolor in reprehenderit in voluptate velit esse
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                         cupidatat non proident, sunt in culpa qui officia deserunt mollit
                         anim id est laborum.
                     </p>
-                    <a class="cta-btn" href="#">Sign Up</a>
+                    <a href="trip.php" class="btn btn-warning">Plan A Trip</a>
+
                 </div>
             </div>
         </section>

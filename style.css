@@ -351,8 +351,7 @@ h6 {
   font-size: 56px;
   font-weight: 700;
   line-height: 64px;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+  color: yellow;
 }
 
 #hero h1 span {
@@ -368,7 +367,7 @@ h6 {
 #hero .icon-box {
   padding: 30px 20px;
   transition: ease-in-out 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+
   height: 100%;
   text-align: center;
   border-radius: 30px;
@@ -377,7 +376,7 @@ h6 {
 #hero .icon-box i {
   font-size: 32px;
   line-height: 1;
-  color: #88b22e;
+  color: yellow;
 }
 
 #hero .icon-box h3 {
@@ -390,18 +389,18 @@ h6 {
 }
 
 #hero .icon-box h3 a {
-  color: #88b22e;
+  color: goldenrod;
   transition: ease-in-out 0.3s;
 }
 
 #hero .icon-box h3 a:hover {
-  color: #88b22e;
+  color: #fff;
 }
 
 #hero .icon-box:hover {
   border-color: #88b22e;
-  background: #f2f2f2;
-  color: #88b22e;
+  transform: scale(1.1);
+  color: #fff;
 }
 
 @media (min-width: 1024px) {
