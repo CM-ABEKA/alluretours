@@ -8,6 +8,12 @@ try{
     echo $e->getMessage();
 }
 
+$sql = SELECT * FROM users;
+$stmt = $myPDO->prepare($sql);
+$stmt -> excecute();
+$rowcount = $stmt->rowCount();
+$details = $stmt->fetch();
 
+print_r ($details);
 
 ?>
