@@ -1,718 +1,256 @@
 <!DOCTYPE html>
-
-<?php 
-
-if (isset($_POST['login'])){
-    if ($_POST['user'] == "admin" && $_POST['password'] == "admin123"){
-      $_SESSION['start']= 1;
-        session_start();
-        
-?>
 <html lang="en">
+<?php
+if(isset($_SESSION['logged_in'])){
+?>
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <title>Allure Tours & Travel</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+    <link rel="shortcut icon" href="./soundcloud/images/headphones-2104207_640.png" type="image/x-icon">
+    <link rel="stylesheet" href="./soundcloud/css/corousel.css">
+    <link rel="stylesheet" href="./soundcloud/css/effects.css">
+    <link rel="stylesheet" href="./soundcloud/css/style.css">
 
-    <!-- Favicons -->
-    <link href="https://res.cloudinary.com/avels-software/image/upload/c_scale,h_322,w_322/v1622624089/logo_lkkxar.png"
-        rel="icon" />
-    <link href="https://res.cloudinary.com/avels-software/image/upload/c_scale,h_322,w_322/v1622624089/logo_lkkxar.png"
-        rel="apple-touch-icon" />
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet" />
-
-    <!-- Vendor CSS Files -->
-    <link href="aos.css" rel="stylesheet" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-    <!-- <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <!-- <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" /> -->
-    <link href="swiper-bundle.min.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/0c4b9907e3.js" crossorigin="anonymous"></script>
-
-    <!-- Template Main CSS File -->
-    <link href="style.css" rel="stylesheet" />
-
-    <!-- =======================================================
-  * Template Name: Gp - v4.2.0
-  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <title>Ampi | Musical</title>
 </head>
 
 <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-lg-between">
-            <h1 class="logo me-auto me-lg-0">
-                <a href="index.html">ALLURE</a>
-            </h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li>
 
-                        <a class="nav-link scrollto" href="#portfolio"> Gallery</a>
-                    </li>
+    <div class="loader">
+        <div></div>
+    </div>
 
-                    <li><a class="nav-link scrollto" href="#contact">Contact us</a></li>
-                    <li><a class="nav-link scrollto" href="logout.php">logout</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- .navbar -->
-        </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center justify-content-center">
-        <div class="container" data-aos="fade-up">
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-                <div class="col-xl-6 col-lg-8">
-                    <h1>ALLURE TOURS & TRAVEL</h1>
-                    <h2>Your adventure partner</h2>
-                </div>
-            </div>
-
-            <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-bus-alt"></i>
-                        <h3><a href="">Bus Trips</a></h3>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-route"></i>
-                        <h3><a href="">Park Visits</a></h3>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-fire"></i>
-                        <h3><a href="">Weekend Out</a></h3>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-campground"></i>
-                        <h3><a href="">Camping</a></h3>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                        <i class="fas fa-mountain"></i>
-                        <h3><a href="">Mountain Hikes</a></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Hero -->
-
-    <main id="main">
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-                <div class="row">
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                        <img src="https://res.cloudinary.com/avels-software/image/upload/v1622624089/allure_pvqgoc.png"
-                            class="img-fluid" alt="" />
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right"
-                        data-aos-delay="100">
-                        <h3>Allure Tours & Travel</h3>
-                        <p class="fst-italic">
-                            We are a tours and travel agency situated in Gilgil Kenya
-                            specialised in a vast range of outdoor experiences.
-                        </p>
-                        <ul>
-                            <li>
-                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.
+    <div class="content-all">
+        <!-- Navigation -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar"
+                style="background-color: #D9D9D9; box-shadow: 0 5px 5px hsl(0, 0%, 65%, 0.4); ">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="./soundcloud/images/headphones-2104207_640.png" alt="" width="30" height="30"
+                            class="d-inline-block align-text-top">
+                        LiveAmp
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
-                            <li>
-                                <i class="ri-check-double-line"></i> Duis aute irure dolor in
-                                reprehenderit in voluptate velit.
+                            <li class="nav-item">
+                                <a class="nav-link" href="features.html">Buy Ticket</a>
                             </li>
-                            <li>
-                                <i class="ri-check-double-line"></i> Ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate trideta storacalaperda mastiro
-                                dolore eu fugiat nulla pariatur.
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Upcoming Events</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Music</a></li>
+                                    <li><a class="dropdown-item" href="#">Movies</a></li>
+                                    <li><a class="dropdown-item" href="#">Series</a></li>
+                                    <li><a class="dropdown-item" href="#">Trending</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
                             </li>
                         </ul>
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident
-                        </p>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- End About Section -->
+        </header>
 
-        <!-- ======= Clients Section ======= -->
 
-        <!-- End Clients Section -->
-
-        <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
-            <div class="container" data-aos="fade-up">
-                <div class="row">
-                    <div class="image col-lg-6" style="
-                background-image: url('https://res.cloudinary.com/avels-software/image/upload/v1622627653/IMG_20210425_160419_pllqs7.jpg');
-              " data-aos="fade-right"></div>
-                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-                        <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-                            <h4>Corporate Tours</h4>
-                            <p>
-                                Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-                                laboris nisi ut aliquip
-                            </p>
-                        </div>
-                        <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                            <h4>Family Outing</h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt
-                            </p>
-                        </div>
-                        <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                            <h4>Photography</h4>
-                            <p>
-                                Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut
-                                maiores omnis facere
-                            </p>
-                        </div>
-                        <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                            <h4>Hiking</h4>
-                            <p>
-                                Expedita veritatis consequuntur nihil tempore laudantium vitae
-                                denat pacta
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Features Section -->
-
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Services</h2>
-                    <p>Check our Services</p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-bus"></i></div>
-                            <h4><a href="">Custom Trips</a></h4>
-                            <p>
-                                Voluptatum deleniti atque corrupti quos dolores et quas
-                                molestias excepturi
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-calendar-day"></i></div>
-                            <h4><a href="">Weekend Events</a></h4>
-                            <p>
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-campground"></i></div>
-                            <h4><a href="">Camping</a></h4>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                        data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-mountain"></i></div>
-                            <h4><a href="">Mountain Climbing</a></h4>
-                            <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-biking"></i></div>
-                            <h4><a href="">Bicycle Hikes</a></h4>
-                            <p>
-                                Quis consequatur saepe eligendi voluptatem consequatur dolor
-                                consequuntur
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
-                            <h4><a href="">Park Visits</a></h4>
-                            <p>
-                                Modi nostrum vel laborum. Porro fugit error sit minus sapiente
-                                sit aspernatur
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Services Section -->
-
-        <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta">
-            <div class="container" data-aos="zoom-in">
-                <div class="text-center">
-                    <h3>Join Allure Tours & Travel Today</h3>
-                    <p>
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
-                    </p>
-                    <a class="cta-btn" href="#">Sign Up</a>
-                </div>
-            </div>
-        </section>
-        <!-- End Cta Section -->
-
-        <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Gallery</h2>
-
-                </div>
-
-                <section id="clients" class="clients">
-                    <div class="container" data-aos="zoom-in">
-                        <div class="clients-slider swiper-container">
-                            <div class="swiper-wrapper align-items-center">
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627675/IMG-20201223-WA0013_mmzigv.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
+        <main>
+            <!-- corousel start-->
+            <section class="my-corous">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonialBox">
+                                <img src="https://cdn.pixabay.com/photo/2012/04/24/12/01/quotation-39627_960_720.png"
+                                    width="30px" class="quote" alt="" />
+                                <div class="content">
+                                    Note this is a drive-in concert.
                                 </div>
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627636/IMG_20210213_161445_hok3qi.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627636/IMG_20210213_161445_hok3qi.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627674/IMG-20201222-WA0031_hflzqp.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627612/IMG_20210213_161312_psyiqh.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627480/IMG_20201225_185011_bkr1jd.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627671/IMG_20210425_150330_b99tlt.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://res.cloudinary.com/avels-software/image/upload/v1622627673/IMG_20210425_160451_mojui5.jpg"
-                                        width=200px height=200px class="img-fluid" alt="" />
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                </section>
-
-
-                <!-- End Portfolio Section -->
-
-                <!-- ======= Counts Section ======= -->
-                <section id="counts" class="counts">
-                    <div class="container" data-aos="fade-up">
-                        <div class="row no-gutters">
-                            <div class="
-                image
-                col-xl-5
-                d-flex
-                align-items-stretch
-                justify-content-center justify-content-lg-start
-              " data-aos="fade-right" data-aos-delay="100"></div>
-                            <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left"
-                                data-aos-delay="100">
-                                <div class="content d-flex flex-column justify-content-center">
-                                    <h3>Success Stories</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Duis aute irure dolor in reprehenderit
-                                    </p>
-                                    <div class="row">
-                                        <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                            <div class="count-box">
-
-                                                <span data-purecounter-start="0" data-purecounter-end="55"
-                                                    data-purecounter-duration="2"
-                                                    class="purecounter text-success"></span>
-                                                <p>
-                                                    <strong>Happy Clients</strong> consequuntur voluptas
-                                                    nostrum aliquid ipsam architecto ut.
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                            <div class="count-box">
-
-                                                <span data-purecounter-start="0" data-purecounter-end="10"
-                                                    data-purecounter-duration="2"
-                                                    class="purecounter text-success"></span>
-                                                <p>
-                                                    <strong>Trips</strong> adipisci atque cum quia
-                                                    aspernatur totam laudantium et quia dere tan
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                            <div class="count-box">
-
-                                                <span data-purecounter-start="0" data-purecounter-end="4"
-                                                    data-purecounter-duration="4"
-                                                    class="purecounter text-success"></span>
-                                                <p>
-                                                    <strong>Years of experience</strong> aut commodi quaerat
-                                                    modi aliquam nam ducimus aut voluptate non vel
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                            <div class="count-box">
-
-                                                <span data-purecounter-start="0" data-purecounter-end="2"
-                                                    data-purecounter-duration="4"
-                                                    class="purecounter text-success"></span>
-                                                <p>
-                                                    <strong>Partners</strong> rerum asperiores dolor alias
-                                                    quo reprehenderit eum et nemo pad der
-                                                </p>
-                                            </div>
-                                        </div>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <h3>Jazz Concert<br /><span>LiveAmp Music</span></h3>
+                                        <img src="https://images.unsplash.com/photo-1536849249744-44e01e7a089d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YWxidW1zfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                            id="card_img" alt="" />
                                     </div>
                                 </div>
-                                <!-- End .content-->
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonialBox">
+                                <img src="https://cdn.pixabay.com/photo/2012/04/24/12/01/quotation-39627_960_720.png"
+                                    width="30px" class="quote" alt="" />
+                                <div class="content">
+                                    Note this is a drive-in concert.
+                                </div>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <h3>Afro Concert<br /><span>LiveAmp Music</span></h3>
+                                        <img src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWxidW0lMjBtdXNpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                            alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonialBox">
+                                <img src="https://cdn.pixabay.com/photo/2012/04/24/12/01/quotation-39627_960_720.png"
+                                    width="30px" class="quote" alt="" />
+                                <div class="content">
+                                    Note this is a drive-in concert.
+                                </div>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <h3>Country Music Concert<br /><span>LiveAmp Music</span></h3>
+                                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YWxidW0lMjBtdXNpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                            alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonialBox">
+                                <img src="https://cdn.pixabay.com/photo/2012/04/24/12/01/quotation-39627_960_720.png"
+                                    width="30px" class="quote" alt="" />
+                                <div class="content">
+                                    Note this is a drive-in concert.
+                                </div>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <h3>All Gospel Concert<br /><span>LiveAmp Music</span></h3>
+                                        <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fG11c2ljJTIwZ2VucmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                            alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonialBox">
+                                <img src="https://cdn.pixabay.com/photo/2012/04/24/12/01/quotation-39627_960_720.png"
+                                    width="30px" class="quote" alt="" />
+                                <div class="content">
+                                    Note this is a drive-in concert.
+                                </div>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <h3>Someone Famous<br /><span>LiveAmp Music</span></h3>
+                                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bXVzaWMlMjBnZW5yZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                            alt="" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- End Counts Section -->
-
-                <!-- ======= Testimonials Section ======= -->
-                <section id="testimonials" class="testimonials">
-                    <div class="container" data-aos="zoom-in">
-                        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <img src="https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png"
-                                            class="testimonial-img" alt="" />
-                                        <h3>Amo B</h3>
-                                        <h4>Ceo &amp; Founder</h4>
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                            Proin iaculis purus consequat sem cure digni ssim donec
-                                            porttitora entum suscipit rhoncus. Accusantium quam,
-                                            ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                            risus at semper.
-                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- End testimonial item -->
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <img src="https://cdn.pixabay.com/photo/2017/01/31/22/32/boy-2027768__340.png"
-                                            class="testimonial-img" alt="" />
-                                        <h3>Lamech Wilsson</h3>
-                                        <h4>Doctor</h4>
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                            Export tempor illum tamen malis malis eram quae irure esse
-                                            labore quem cillum quid cillum eram malis quorum velit fore
-                                            eram velit sunt aliqua noster fugiat irure amet legam anim
-                                            culpa.
-                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- End testimonial item -->
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <img src="https://cdn.pixabay.com/photo/2013/07/13/10/24/woman-157149__340.png"
-                                            class="testimonial-img" alt="" />
-                                        <h3>Elena Kimani</h3>
-                                        <h4>Director operations</h4>
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                            Enim nisi quem export duis labore cillum quae magna enim
-                                            sint quorum nulla quem veniam duis minim tempor labore quem
-                                            eram duis noster aute amet eram fore quis sint minim.
-                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- End testimonial item -->
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <img src="https://cdn.pixabay.com/photo/2020/11/06/05/33/woman-5716875__340.png"
-                                            class="testimonial-img" alt="" />
-                                        <h3>Sarah Ema</h3>
-                                        <h4>Tour guide</h4>
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                                            multos export minim fugiat minim velit minim dolor enim duis
-                                            veniam ipsum anim magna sunt elit fore quem dolore labore
-                                            illum veniam.
-                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- End testimonial item -->
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <img src="https://cdn.pixabay.com/photo/2016/04/01/10/34/aircraft-1299943__340.png"
-                                            class="testimonial-img" alt="" />
-                                        <h3>Peter Kabingu</h3>
-                                        <h4>Transport</h4>
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                            Quis quorum aliqua sint quem legam fore sunt eram irure
-                                            aliqua veniam tempor noster veniam enim culpa labore duis
-                                            sunt culpa nulla illum cillum fugiat legam esse veniam culpa
-                                            fore nisi cillum quid.
-                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- End testimonial item -->
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End Testimonials Section -->
-
-                <!-- ======= Team Section ======= -->
-
-                <!-- End Team Section -->
-
-                <!-- ======= Contact Section ======= -->
-                <section id="contact" class="contact">
-                    <div class="container" data-aos="fade-up">
-                        <div class="section-title">
-                            <h2>Contact</h2>
-                            <p>Contact Us</p>
-                        </div>
-
-                        <div>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6671308061054!2d36.315589548043555!3d-0.49879639979964646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18290b91c7925e39%3A0x10b6d32710f39fda!2sAllure%20Tours%20and%20Travels!5e0!3m2!1sen!2ske!4v1622668245494!5m2!1sen!2ske"
-                                width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-
-                        <div class="row mt-5">
-
-
-
-
-
-                            <div class="col-lg-8 mt-5 mt-lg-0 mx-auto">
-                                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                                    <div class="row">
-                                        <div class="col-md-6 form-group">
-                                            <input type="text" name="name" class="form-control" id="name"
-                                                placeholder="Your Name" required />
-                                        </div>
-                                        <div class="col-md-6 form-group mt-3 mt-md-0">
-                                            <input type="email" class="form-control" name="email" id="email"
-                                                placeholder="Your Email" required />
-                                        </div>
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <input type="text" class="form-control" name="subject" id="subject"
-                                            placeholder="Subject" required />
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                                            required></textarea>
-                                    </div>
-                                    <div class="my-3">
-                                        <div class="loading">Loading</div>
-                                        <div class="error-message"></div>
-                                        <div class="sent-message">
-                                            Your message has been sent. Thank you!
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-outline-success" type="submit"><i
-                                                class="fa fa-envelope"></i> Send Message</button>
-                                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            <!-- corousel end -->
+            <section>
+                <div class="jumbotron text-center">
+                    <h1>The Best Music Streaming</h1>
+                    <h2></h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <form action="">
+                                    <input id="artistName" class="form-control" type="text"
+                                        placeholder="Enter artist name">
+                                    <br>
+                                    <a class="btn btn-primary"
+                                        onclick="searchArtist(document.getElementById('artistName').value)"
+                                        href="">Search</a>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- End Contact Section -->
-    </main>
-    <!-- End #main -->
+                </div>
+    </div>
+    </section>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer-info">
-                            <h3>ALLURE TOURS & TRAVEL</h3>
-                            <p>
-                                Gilgil <br />
-                                Kenya<br /><br />
-                                <strong>Phone:</strong> +254725754351<br />
-                                <strong>Email:</strong> alluretourstravels@gmail.com<br />
-                            </p>
-                            <div class="social-links mt-3">
-                                <a href="https://web.facebook.com/groups/157013252692254/" class="facebook"><i
-                                        class="fab fa-facebook fa-2x me-4"></i></a>
-                                <a href="https://www.instagram.com/alluretoursandtravels/" class="instagram"><i
-                                        class="fab fa-instagram fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="container">
+        <div class="row">
+            <div class="col " id="spotify">
+                <span><i class="fab fa-spotify fa-2x"></i></span>
+                <b>Spotify</b>
+                <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380"
+                    frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div class="col " id="deezer">
+                <img src="https://e-cdns-assets.dzcdn.net/widget/images/deezer-logo-no-bg.png" width="100px" alt="">
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/playlist/1479458365"
+                    width="100%" height="300" frameborder="0" allowtransparency="true"
+                    allow="encrypted-media; clipboard-write"></iframe>
+            </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li>
-                                </i> <a href="#">Home</a>
-                            </li>
-                            <li>
-                                </i> <a href="#">About us</a>
-                            </li>
-                            <li>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
+            <div class="canvas">
+                <canvas id="visualiser"></canvas>
+            </div>
+        </div>
+        </div>
+    </section>
 
-                                <a href="#">Terms of service</a>
-                            </li>
-                            <li>
-
-                                <a href="#">Privacy policy</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li>
-
-                                <a href="#">Corporate tours</a>
-                            </li>
-                            <li>
-
-                                <a href="#">Family events</a>
-                            </li>
-                            <li>
-
-                                <a href="#">Mountain hikes</a>
-                            </li>
-                        </ul>
-                    </div>
-
-
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 id="name"></h3>
+                    <img src="" alt="" id="picture">
+                    <p id="title"></p>
                 </div>
             </div>
         </div>
+    </section>
 
+    <footer></footer>
+    </div>
 
-        <!-- End Footer -->
-
-        <div id="preloader"></div>
-        <a href="#" class="back-to-top d-flex align-items-center bg-white justify-content-center"><i
-                class="fa fa-home text-success"></i></a>
-
-        <!-- Vendor JS Files -->
-        <script src="aos.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
-
-        <script src="glightbox.min.js"></script>
-        <!-- <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script> -->
-        <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
-        <script src="purecounter.js"></script>
-        <script src="swiper-bundle.min.js"></script>
-
-        <!-- Template Main JS File -->
-        <script src="main.js"></script>
-
-        <?php
-}else{
-header('location:login.php')
-}}?>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./soundcloud/scripts/script.js"></script>
+    <!-- <script src="about.js"></script> -->
+    <script src="./soundcloud/scripts/effects.js"></script>
 </body>
+<?php
+}else{
+    include('login.php');
+}?>
 
 </html>
