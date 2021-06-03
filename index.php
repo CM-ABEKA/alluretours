@@ -4,8 +4,8 @@
 
 if (isset($_POST['login'])){
     if ($_POST['user'] == "admin" && $_POST['password'] == "admin123"){
-      $_SESSION['start']= 1;
         session_start();
+      $_SESSION['start']= 1;
         
 ?>
 <html lang="en">
@@ -708,11 +708,16 @@ if (isset($_POST['login'])){
         <!-- Template Main JS File -->
         <script src="main.js"></script>
 
-        <?php
-}else{
-include('login.php')
-}}?>
+
 
 </body>
+
+<?php
+}}else{
+header('Location:login.php');
+
+}
+
+?>
 
 </html>
