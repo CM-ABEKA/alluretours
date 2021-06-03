@@ -79,7 +79,7 @@
                             placeholder="Repeat password">
                     </div>
 
-                    <button class="btn btn-info me-0     mb-3" name="login">Sign up</button>
+                    <a href="login.php" class="btn btn-info me-0 mb-3" name="login">Sign up</a>
 
                     <a href="guest.php" class="text-center" style="text-decoration:none; ">
                         <p class=" text-danger"> Continue as guest?
