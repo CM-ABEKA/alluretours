@@ -50,7 +50,7 @@
             <div class="col-7 "><img src="undraw_campfire_s6y4.svg" alt=""></div>
             <div class="col-5">
 
-                <form class="p-3 rounded-3" style="background-color: #fff ">
+                <form class="p-3 rounded-3" style="background-color: #fff " method="post">
                     <h3 class="text-center">ALLURE TOURS & TRAVEL</h3>
 
 
@@ -66,8 +66,12 @@
                     </div>
                     <div class="mb-3">
 
-                        <input type="text" required class="form-control" name="user" placeholder="Email">
+                        <input type="text" required class="form-control" name="email" placeholder="Email">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+
+                        <input type="tel" required class="form-control" name="phone" placeholder="Phone">
                     </div>
                     <div class="mb-3">
 
@@ -79,7 +83,7 @@
                             placeholder="Repeat password">
                     </div>
 
-                    <a href="login.php" class="btn btn-info me-0 mb-3" name="login">Sign up</a>
+                    <button type='submit' class="btn btn-info me-0 mb-3" name="login">Sign up</button>
 
                     <a href="guest.php" class="text-center" style="text-decoration:none; ">
                         <p class=" text-danger"> Continue as guest?
@@ -96,6 +100,55 @@
             </div>
         </div>
     </div>
+    <?php
+require('dbConnect.php');
+
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+    
+    //password hash
+    $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+
+   
+     $sql = "INSERT INTO `users`(`first_name`, `last_name`,`phone`, `email`, `password`) VALUES (?,?,?,?,?)";
+     
+     $stmt = mysqli_prepare($conn,$sql);
+     if($stmt){
+    
+         mysqli_stmt_bind_param($stmt,'ssiss',$param_fname,$param_lname,$param_phone,$param_email,$param_password);
+     
+         $param_fname = $first_name;
+         $param_lname = $last_name;
+         $param_phone = $phone;
+         $param_email = $email;
+         $param_password = $hashed_password;
+
+         
+
+         //excute the query
+         if(mysqli_stmt_execute($stmt)){
+            header(`location:index.php`);
+             echo "$first_name registered successfully!";
+
+             
+             //header
+            
+         }else{
+            echo "User $first_name not registered.Try again ".mysqli_error($conn);
+         }
+
+
+     }else{
+         echo "Something wrong with the query".mysqli_error($conn);
+     }
+
+
+ 
+    
+    ?>
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center bg-white justify-content-center"><i

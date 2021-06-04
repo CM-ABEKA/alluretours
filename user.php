@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 
 <?php 
+require('dbConnect.php');
 
 if (isset($_POST['login'])){
-    if ($_POST['user'] == "admin" && $_POST['password'] == "admin123"){
-        session_start();
-      $_SESSION['start']= 1;
-        
-?>
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$sql = "SELECT * FROM `users` WHERE `email`=?";
+
+$stmt = mysqli_prepare($conn, $sql);
+if($stmt){
+    //bind params
+
+
+mysqli_stmt_bind_param($stmt,'s',$param_email);
+//bind
+$param_email = $email;
+
+//excute the query
+if(mysqli_stmt_execute($stmt)){
+   //results
+   $result = mysqli_stmt_get_result($stmt);
+   if($result){
+    $numrows = mysqli_num_rows($result);
+    if($numrows>0){
+        //put results in an associatife array
+        $row = mysqli_fetch_assoc($result);
+        $passwordHashedFromDb = $row['password'];
+        //verify the password
+        $verifyPassword = password_verify($password,$passwordHashedFromDb);
+        if($verifyPassword){
+            //logined successfulll
+            $user = $row['first_name'];
+            //
+            
+            //session
+            //name
+            //id
+            session_start();
+            //set values
+            $_SESSION['name']=$row['first_name'];
+            $_SESSION['id']=$row['id'];
+            $_SESSION['role']=$row['role'];?>
+
 <html lang="en">
 
 <head>
@@ -82,6 +118,11 @@ if (isset($_POST['login'])){
 
                     <li><a class="nav-link scrollto" href="#contact">Contact us</a></li>
                     <li><a class="nav-link scrollto" href="logout.php">logout</a></li>
+                    <?php if ($_SESSION['role']== 'admin'){
+                        echo "<li><a class='nav-link scrollto' href='adminlogin.php'> ADMIN </a></li>";
+                    }?>
+                    <li> <a class="nav-link scrollto text-info" href="#"><?php echo $user;?> <i
+                                class="fa fa-user fa-2x text-warning"></i></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -118,6 +159,8 @@ if (isset($_POST['login'])){
         </div>
     </section>
     <!-- End Hero -->
+
+
 
     <main id="main">
         <!-- ======= About Section ======= -->
@@ -570,7 +613,7 @@ if (isset($_POST['login'])){
 
 
                             <div class="col-lg-8 mt-5 mt-lg-0 mx-auto">
-                                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                <form action="message.php" method="post" role="form" class="php-email-form">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
                                             <input type="text" name="name" class="form-control" id="name"
@@ -597,7 +640,7 @@ if (isset($_POST['login'])){
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <button class="btn btn-outline-success" type="submit"><i
+                                        <button class="btn btn-outline-success" name="send" type="submit"><i
                                                 class="fa fa-envelope"></i> Send Message</button>
                                     </div>
                                 </form>
@@ -703,13 +746,38 @@ if (isset($_POST['login'])){
 
 
 </body>
-
 <?php
-}}else{
-header('Location:login.php');
+        }else{
+            output("Oops! Invalid email or password.Try again");
+        }
 
+       
+
+    }else{
+        //no
+        output("Invalid email address.Check and try again");
+    }
+}else{
+    output("Something went wrong".mysqli_error($conn));
 }
 
+}else{
+ output("Something went wrong ".mysqli_error($conn));
+}
+
+
+}else{
+output("Something wrong with the query".mysqli_error($conn));
+}
+}
+
+
+function output($message){
+echo"<h3>$message</h3>";
+}
+        
 ?>
+
+
 
 </html>

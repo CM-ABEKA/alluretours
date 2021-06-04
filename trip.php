@@ -114,7 +114,7 @@
             <h2 style="font-family: 'Fredoka One', cursive;">Trip Planner</h2>
             <p>Fill in the form below to receive a trip free quotation</p>
             <div class="">
-                <form class="row g-3">
+                <form action="triplog.php" method="post" class="row g-3">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Email</label>
                         <input type="email" class="form-control" name="email" id="inputEmail4">
@@ -125,7 +125,7 @@
                     </div>
                     <div class="col-4">
                         <label for="inputAddress" class="form-label">Trip Start Location</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Eg. Nakuru">
+                        <input type="text" class="form-control" name="start" id="inputAddress" placeholder="Eg. Nakuru">
                     </div>
                     <div class="col-4">
                         <label for="inputAddress2" class="form-label">Destination</label>
@@ -134,17 +134,17 @@
                     </div>
                     <div class="col-md-4">
                         <label for="inputCity" class="form-label">Duration in hrs</label>
-                        <input type="number" class="form-control" name="time" id="inputCity">
+                        <input type="number" class="form-control" name="duration" id="inputCity">
                     </div>
                     <div class="form-group row mt-3">
                         <label for="example-date-input" class="col-1 col-form-label">Date</label>
                         <div class="col-11">
-                            <input class="form-control" type="date" value="-" id="example-date-input">
+                            <input class="form-control" type="date" name="date" value="-" id="example-date-input">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <label for="inputZip" class="form-label">Number of people.</label>
-                        <input type="text" class="form-control" id="inputZip">
+                        <input type="text" name="heads" class="form-control" id="inputZip">
                     </div>
                     <div class="col-12">
                         <div class="form-check">
@@ -186,7 +186,7 @@
 
 
                     <div class="col-lg-8 mt-5 mt-lg-0 mx-auto">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="message.php" method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="name"

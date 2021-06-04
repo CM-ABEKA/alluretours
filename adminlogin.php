@@ -22,7 +22,7 @@
                     <i class="fa fa-user-circle fa-6x"></i>
                 </div>
                 <div class="card-body">
-                    <form action="user.php" method="post">
+                    <form action="admin.php" method="post">
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -42,7 +42,7 @@
                             <input type="password" required class="form-control" name="password" placeholder="Password">
                         </div>
                         <button class="btn btn-success mb-3" name="login">Login Now</button>
-                        <p><a href="passwordreset.php">Forgot Password?</a></p>
+                        <p><a href="#">Forgot Password?</a></p>
                         <a href="guest.php" class="text-center" style="text-decoration:none; ">
                             <p class=" text-danger"> Continue as guest?
                                 <i class="fas fa-external-link-alt"></i>
